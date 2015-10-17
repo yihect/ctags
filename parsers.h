@@ -36,6 +36,7 @@
 	JavaScriptParser, \
 	LispParser, \
 	LuaParser, \
+	LtdParser, \
 	MakefileParser, \
 	MatLabParser, \
 	ObjcParser , \

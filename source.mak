@@ -30,6 +30,7 @@ SOURCES = \
 	lisp.c \
 	lregex.c \
 	lua.c \
+	ltd.c \
 	main.c \
 	make.c \
 	matlab.c \
@@ -93,6 +94,7 @@ OBJECTS = \
 	lisp.$(OBJEXT) \
 	lregex.$(OBJEXT) \
 	lua.$(OBJEXT) \
+	ltd.$(OBJEXT) \
 	main.$(OBJEXT) \
 	make.$(OBJEXT) \
 	matlab.$(OBJEXT) \
