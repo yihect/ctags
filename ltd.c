@@ -100,7 +100,7 @@ static boolean is_a_code_line (const unsigned char *line)
 
 static void extract_name (const char *begin, const char *end, vString *name, const int kind)
 {
-  print_string(begin, end);
+  //print_string(begin, end);
   if (begin != NULL  &&  end != NULL  &&  begin < end)
   {
     const char *cp;
