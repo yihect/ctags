@@ -1,12 +1,13 @@
 /*
  *   $Id$
  *
- *   Copyright (c) 2000-2001, Max Ischenko <mfi@ukr.net>.
+ *   Copyright (c) 2000-2022, Tong Chen <yihect@gmail.com>.
  *
  *   This source code is released for free distribution under the terms of the
  *   GNU General Public License.
  *
- *   This module contains functions for generating tags for Lua language.
+ *   This module contains functions for generating tags for Ltd data descriptive
+ *   language.
  */
 
 /*
@@ -28,7 +29,7 @@ typedef enum {
   K_KEYWORD,
   K_RFX,
   K_VOC, K_VGRP,
-  K_GRAM, K_VS 
+  K_GRAM, K_VS
 } ltaKind;
 
 static kindOption LtdKinds [] = {
@@ -77,10 +78,10 @@ static void /*__unused__ */print_string (char *p, char *q)
 
 /*
  * Helper function.
- * Returns 1 if line looks like a line of Lua code.
+ * Returns 1 if line looks like a line of Ltd code.
  *
  * TODO: Recognize UNIX bang notation.
- * (Lua treat first line as a comment if it starts with #!)
+ * (Ltd treat first line as a comment if it starts with #!)
  *
  */
 static boolean is_a_code_line (const unsigned char *line)
@@ -135,14 +136,14 @@ static int have_keyword(const unsigned char *line)
   return -1;
 }
 
-static void process_keyword(int kw_type, char *line)
+static void process_keyword(int kw_type, const char *line)
 {
   char *p, *q, *pt;
   vString *name = vStringNew ();
 
   if (kw_type == KW_ENUM) {
     p =pt= strchr(line, '{')+1;
-    q = strchr(line, '}'); 
+    q = strchr(line, '}');
     while( pt<q)
     {
       if (*pt == ',') {
